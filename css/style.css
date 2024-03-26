@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-500 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-700 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tenor-sans-400 {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #ffffff;
+  background-color: #ffffff;
+  background-image: url(../img/background.jpg);
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  padding: 0 136px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 90px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+.header {
+  background-color: #ffffff;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+.header-top-wrapper {
+  background-color: #222222;
+}
+.header-top__social, .header-top_menu {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.header-top__social-link {
+  color: #ffffff;
+}
+.header-bottom__logo {
+  display: block;
+  margin: 40px auto;
+  max-width: 324px;
+  width: 100%;
+}
+.header-bottom__nav {
+  padding-bottom: 40px;
+}
+.header-bottom__nav-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.header-bottom__nav-link {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+  position: relative;
+}
+.header-bottom__nav-link:before {
+  content: "";
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: -10px;
+  width: 0;
+  height: 1px;
+  background-color: #000000;
+  transition: all 0.3s;
+}
+.header-bottom__nav-link:hover:before, .header-bottom__nav-link._active:before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+.banner {
+  height: 90vh;
+}
+.banner-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.banner-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+}
+.banner-item._bg1 {
+  background-image: url(../img/banner/banner1.jpg);
+}
+.banner-item._bg2 {
+  background-image: url(../img/banner/banner2.jpg);
+}
+.banner-item._bg3 {
+  background-image: url(../img/banner/banner3.jpg);
+}
+.banner-item__container {
+  position: relative;
+  height: 100%;
+  margin: 0 136px;
+}
+.banner-item__info {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  max-width: 500px;
+}
+.banner-item__subtitle {
+  font-size: 50px;
+  opacity: 0;
+  transform: translateY(100%);
+}
+.banner-item__subtitle.animate {
+  animation: slideIn 0.8s ease forwards;
+}
+.banner-item__title {
+  font-size: 114px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(100%);
+}
+.banner-item__title.animate {
+  animation: slideIn 0.9s ease forwards;
+}
+.banner-item__text {
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0;
+  transform: translateY(100%);
+}
+.banner-item__text.animate {
+  animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.artists-inner {
+  border-radius: 36px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: inset 0 6px 24px 0 rgba(136, 136, 136, 0.34);
+  padding: 100px 80px;
+  margin: 0 -80px;
+}
+.artists__subtitle {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.artists__subtitle span {
+  font-weight: 700;
+}
+.artists__title {
+  color: #000000;
+  font-size: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.artists__container {
+  display: grid;
+  grid-template-areas: "artist1 artist2 artist4" "artist1 artist3 artist4";
+  grid-gap: 40px;
+}
+.artists__item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.artists__item:nth-child(1) {
+  grid-area: artist1;
+}
+.artists__item:nth-child(2) {
+  grid-area: artist2;
+}
+.artists__item:nth-child(3) {
+  grid-area: artist3;
+}
+.artists__item:nth-child(4) {
+  grid-area: artist4;
+}
+.artists__item-info {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 14px 26px;
+}
+.artists__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.artists__item-img-box {
+  height: 100%;
+}
+
+.top-inner {
+  border-radius: 36px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: inset 0 6px 24px 0 rgba(136, 136, 136, 0.34);
+  padding: 100px 80px;
+  margin: 0 -80px;
+}
+.top__subtitle {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.top__title {
+  color: #000000;
+  font-size: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.top__container {
+  display: flex;
+  gap: 40px;
+}
+.top__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top__item-info {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 14px 26px;
+  height: 100%;
+}
+.top__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.top__item-img-box {
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
